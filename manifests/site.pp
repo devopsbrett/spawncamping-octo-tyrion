@@ -12,6 +12,12 @@ node 'default' {
 
 node /^jenkins.*$/ inherits 'default' {
 	include jenkins
-	jenkins::plugin {'swarm':}
+	$plugins = [
+		'swarm',
+		'ec2',
+		'ant',
+		'build-pipeline-plugin',
+	]
+	jenkins::plugin {$plugins:}
 
 } 

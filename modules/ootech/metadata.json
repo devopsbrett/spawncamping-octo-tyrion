@@ -1,0 +1,27 @@
+{
+  "dependencies": [
+
+  ],
+  "description": "UNKNOWN",
+  "summary": "UNKNOWN",
+  "source": "UNKNOWN",
+  "project_page": "UNKNOWN",
+  "checksums": {
+    "json/projects/someotherproject": "d41d8cd98f00b204e9800998ecf8427e",
+    "json/projects/12thfloor.ba.json": "d41d8cd98f00b204e9800998ecf8427e",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "Modulefile": "affa25c26638c2befccc6f0911e9d21d",
+    "README": "c1eb969e14a849a256751b99181863a3",
+    "json/projects/unilever.json": "d41d8cd98f00b204e9800998ecf8427e",
+    "lib/puppet/parser/functions/ooprojects.rb": "20856aeaeca210f3890caa3f22b1c844",
+    "manifests/init.pp": "ce32b8ba493645c7a89e9703bd065dc1",
+    "tests/init.pp": "6413960e6091f2522438a99324edba36"
+  },
+  "author": "bmack",
+  "types": [
+
+  ],
+  "license": "Apache License, Version 2.0",
+  "name": "bmack-ootech",
+  "version": "0.0.1"
+}

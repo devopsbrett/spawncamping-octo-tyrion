@@ -1,0 +1,29 @@
+{
+	"githubrepo": "automationtest",
+	"type": "wordpress",
+	"env": {
+		"dev": {
+			"dbname": "wordpresstest_development",
+			"dbuser": "wordpresstest",
+			"dbpass": "testpasswp",
+			"url": "dev.wordpresstest.bmack.com"
+		},
+		"stage": {
+			"enabled": false,
+			"dbname": "wordpresstest_stage",
+			"dbuser": "wordpresstest",
+			"dbpass": "testpasswp",
+			"url": "stage.wordpresstest.bmack.com"				
+		},
+		"qa": {
+			"dbname": "wordpresstest_qa",
+			"dbuser": "wordpresstest",
+			"dbpass": "testpasswp",
+			"url": "qa.wordpresstest.bmack.com"				
+		}
+	},
+	"configs": [
+		{ "template": "sites/default/settings.php.erb" }
+	],
+	"deployto": "/var/www"
+}

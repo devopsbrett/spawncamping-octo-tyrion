@@ -1,5 +1,5 @@
 filebucket { 'main':
-  server => 'ip-10-0-0-140.ec2.internal',
+  server => 'puppet.ec2.internal',
   path   => false,
 }
 

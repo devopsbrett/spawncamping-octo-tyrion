@@ -10,6 +10,15 @@ node 'default' {
 	#stuff
 }
 
+node 'httpd' inherits 'default' {
+	#install web server
+	include apache
+}
+
+node /^web.dev*$/ inherits 'httpd' {
+	#do stuff
+} 
+
 node /^jenkins.*$/ inherits 'default' {
 	include jenkins
 	$plugins = [

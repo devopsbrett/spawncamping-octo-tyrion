@@ -19,6 +19,14 @@ node /^web.dev*$/ inherits 'httpd' {
 	#do stuff
 } 
 
+node /^web.stage.*$/ inherits 'httpd' {
+	#do stage
+}
+
+node /^web.qa.*$/ inherits 'httpd' {
+	#do stage
+}
+
 node /^jenkins.*$/ inherits 'default' {
 	include jenkins
 	$plugins = [
@@ -60,5 +68,9 @@ node /^jenkins.*$/ inherits 'default' {
 		'token-macro',
 	]
 	jenkins::plugin {$plugins:}
+
+	include ootech
+
+	class { 'ootech::jenkins': }
 
 } 

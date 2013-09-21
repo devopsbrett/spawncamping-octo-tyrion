@@ -71,6 +71,6 @@ node /^jenkins.*$/ inherits 'default' {
 
 	include ootech
 
-	#class { 'ootech::jenkins': }
+	class { 'ootech::jenkins': }
 
 } 

@@ -1,5 +1,5 @@
 filebucket { 'main':
-  server => 'ip-10-190-41-55.ec2.internal',
+  server => 'puppet',
   path   => false,
 }
 
@@ -18,6 +18,14 @@ node 'httpd' inherits 'default' {
 node /^web.dev*$/ inherits 'httpd' {
 	#do stuff
 } 
+
+node /^web.stage.*$/ inherits 'httpd' {
+	#do stage
+}
+
+node /^web.qa.*$/ inherits 'httpd' {
+	#do stage
+}
 
 node /^jenkins.*$/ inherits 'default' {
 	include jenkins
@@ -60,5 +68,9 @@ node /^jenkins.*$/ inherits 'default' {
 		'token-macro',
 	]
 	jenkins::plugin {$plugins:}
+
+	include ootech
+
+	class { 'ootech::jenkins': }
 
 } 

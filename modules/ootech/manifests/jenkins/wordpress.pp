@@ -14,20 +14,13 @@ define ootech::jenkins::wordpress(
   
 ) {
   if $enabled == true {
-    file { "${jenkinshome}/jobs":
-      ensure  => directory,
-      owner   => $jenkinsuser,
-      group   => $jenkinsgroup,
-      mode    => 0755,
-      require => Class["jenkins::package"],
-    }
-
+    
     file { "${jenkinshome}/jobs/${name}":
       ensure  => directory,
       owner   => $jenkinsuser,
       group   => $jenkinsgroup,
       mode    => 0755,
-      require => File["${jenkinshome}/jobs"],
+      require => Class["jenkins::package"],
     }
 
     file { "${jenkinshome}/jobs/${name}/config.xml":

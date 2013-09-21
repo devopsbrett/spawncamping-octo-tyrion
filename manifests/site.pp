@@ -68,7 +68,9 @@ node /^jenkins.*$/ inherits base {
 		'subversion',
 		'token-macro',
 	]
-	jenkins::plugin {$plugins:}
+	jenkins::plugin {$plugins:
+		require => Class["jenkins::package"],
+	}
 
 	#include ootech
 

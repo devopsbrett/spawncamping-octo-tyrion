@@ -72,8 +72,8 @@ node /^jenkins.*$/ inherits base {
 		require => Class["jenkins::package"],
 	}
 
-	#include ootech
+	include ootech
 
-	#class { 'ootech::jenkins': }
+	class { 'ootech::jenkins': }
 
 } 

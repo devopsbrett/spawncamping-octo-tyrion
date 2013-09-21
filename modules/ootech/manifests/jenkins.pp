@@ -25,7 +25,6 @@ class ootech::jenkins {
 						envprops  => ooprojectval($proj, "envprops", $env),
 						githuburl => "http://github.com/${githubuser}/${githubrepo}",
 						gitrepo   => "git@github.com:${githubuser}/${githubrepo}.git",
-						notify    => Exec['jenkins_refresh'],
 						require	  => Github["${githubuser}/${$githubrepo}"],
 					}
 				}
@@ -38,4 +37,6 @@ class ootech::jenkins {
 		path => [ "/usr/bin", "/bin" ],
 		refreshonly => true,
 	}
+
+	Class["jenkins::package"] -> Ootech::Jenkins::Wordpress <| |> ~> Service['jenkins'] 
 }

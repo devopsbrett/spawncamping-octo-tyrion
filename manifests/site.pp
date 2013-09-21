@@ -6,11 +6,11 @@ filebucket { 'main':
 # Make filebucket 'main' the default backup location for all File resources:
 File { backup => 'main' }
 
-node 'default' {
+node 'base' {
 	#stuff
 }
 
-node 'httpd' inherits 'default' {
+node 'httpd' inherits 'base' {
 	#install web server
 	include apache
 }
@@ -27,7 +27,7 @@ node /^web.qa.*$/ inherits 'httpd' {
 	#do stage
 }
 
-node /^jenkins.*$/ inherits 'default' {
+node /^jenkins.*$/ inherits base {
 	include jenkins
 	$plugins = [
 		'swarm',

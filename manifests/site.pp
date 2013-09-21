@@ -64,13 +64,14 @@ node /^jenkins.*$/ inherits base {
 		's3',
 		'ssh-credentials',
 		'ssh-slaves',
+		'ssh-agent',
 		'subversion',
 		'token-macro',
 	]
 	jenkins::plugin {$plugins:}
 
-	include ootech
+	#include ootech
 
-	class { 'ootech::jenkins': }
+	#class { 'ootech::jenkins': }
 
 } 

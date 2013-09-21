@@ -32,7 +32,7 @@ class ootech::jenkins {
 		}
 	}
 
-	file { "${jenkinshome}/jobs":
+	file { "${ootech::params::jenkinshome}/jobs":
       ensure  => directory,
       owner   => $jenkinsuser,
       group   => $jenkinsgroup,

@@ -32,11 +32,18 @@ class ootech::jenkins {
 		}
 	}
 
+	file { "${jenkinshome}/jobs":
+      ensure  => directory,
+      owner   => $jenkinsuser,
+      group   => $jenkinsgroup,
+      mode    => 0755,
+	}
+
 	exec { 'jenkins_refresh':
 		command => "curl -i -d '' http://127.0.0.1:8080/reload",
 		path => [ "/usr/bin", "/bin" ],
 		refreshonly => true,
 	}
 
-	Class["jenkins::package"] -> Ootech::Jenkins::Wordpress <| |> ~> Service['jenkins'] 
+	Class["jenkins::package"] -> File["/var/lib/jenkins/jobs"] -> Ootech::Jenkins::Wordpress <| |> ~> Service['jenkins'] 
 }

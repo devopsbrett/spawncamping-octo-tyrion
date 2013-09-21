@@ -20,7 +20,7 @@ define ootech::jenkins::wordpress(
       owner   => $jenkinsuser,
       group   => $jenkinsgroup,
       mode    => 0755,
-      require => Class["jenkins::package"],
+      require => File["${jenkinshome}/jobs"],
     }
 
     file { "${jenkinshome}/jobs/${name}/config.xml":

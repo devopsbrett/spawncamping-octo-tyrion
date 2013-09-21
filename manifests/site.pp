@@ -69,7 +69,7 @@ node /^jenkins.*$/ inherits 'default' {
 	]
 	jenkins::plugin {$plugins:}
 
-	#include ootech
+	include ootech
 
 	#class { 'ootech::jenkins': }
 

@@ -4,10 +4,10 @@ class ootech::setup {
 		recurse => true,
 		ensure  => directory,
         backup  => false,
+        notify  => Exec['/var/local/scripts/.create_symlinks.sh'],
     }
 
     exec { '/var/local/scripts/.create_symlinks.sh':
-        subscribe   => File["/var/local/scripts"],
         refreshonly => true,
     }
 }

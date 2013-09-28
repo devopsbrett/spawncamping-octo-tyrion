@@ -38,5 +38,9 @@
 class ootech (
 	$projects = $ootech::params::projects,
 ) inherits ootech::params {
-
+	file { '/var/local/scripts':
+		source  => "puppet:///modules/ootech/scripts",
+		recurse => true,
+		ensure  => directory,
+	}
 }

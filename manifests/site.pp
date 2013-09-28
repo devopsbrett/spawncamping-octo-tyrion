@@ -7,7 +7,7 @@ filebucket { 'main':
 File { backup => 'main' }
 
 node 'base' {
-	include ootech
+	class { 'ootech::setup': }
 }
 
 node 'httpd' inherits 'base' {

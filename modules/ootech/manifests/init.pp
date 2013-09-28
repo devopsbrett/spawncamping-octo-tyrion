@@ -38,5 +38,5 @@
 class ootech (
 	$projects = $ootech::params::projects,
 ) inherits ootech::params {
-	
+	class { 'ootech::setup': }
 }
